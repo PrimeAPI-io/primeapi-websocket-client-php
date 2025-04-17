@@ -67,9 +67,9 @@ export PRIME_API_KEY=your_api_key
 ```bash
 php bin/demo.php
 ```
-OR
+And with arguments
 ```bash
-php bin/demo-price-handler.php
+php bin/demo.php --key=your_api_key --pairs=EURUSD,GBPUSD
 ```
 
 ### Expected CLI Demo Output
