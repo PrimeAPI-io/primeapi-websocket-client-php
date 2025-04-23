@@ -27,6 +27,9 @@ class Client
         STREAM_REALTIME = 'fx',
         STREAM_ONE_SEC = 'fx1s';
 
+    public const string
+        DEFAULT_WS_URL = 'wss://euc2.primeapi.io';
+
     protected ?string $apiKey = null;
     protected array $realTimePairs = [];
     protected array $oneSecondPairs = [];
@@ -40,9 +43,10 @@ class Client
     private WebSocketClient $webSocketClient;
 
     public function __construct(
-        private readonly string $webSocketUrl
+        private ?string $webSocketUrl = null
     ) {
         $this->apiKey = getenv('PRIME_API_KEY') ?: null;
+        $this->webSocketUrl = $webSocketUrl ?: self::DEFAULT_WS_URL;
         $this->initWebSocketClient();
     }
 

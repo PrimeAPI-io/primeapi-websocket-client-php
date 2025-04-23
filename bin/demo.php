@@ -16,7 +16,7 @@ try {
     }
 
     // Create the client
-    $primeClient = new \PrimeAPI\WebSocket\Client("wss://euc2.primeapi.io");
+    $primeClient = new \PrimeAPI\WebSocket\Client();
 
     // Set API key (by default, and when this is empty, the client looks at PRIME_API_KEY env var)
     $primeClient->apiKey($apiKey);

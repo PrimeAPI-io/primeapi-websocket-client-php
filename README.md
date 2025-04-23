@@ -28,7 +28,7 @@ $priceHandler = new class implements \PrimeAPI\WebSocket\PriceHandlerInterface {
 
 Creating and starting a WebSocket client is super simple.
 ```php
-$primeClient = new \PrimeAPI\WebSocket\Client("wss://euc2.primeapi.io");
+$primeClient = new \PrimeAPI\WebSocket\Client();
     ->apiKey('your-api-key');
     ->realTimePairs(['USDJPY', 'AUDCAD']);
     ->priceHandler($priceHandler);
